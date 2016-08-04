@@ -1,0 +1,55 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+     xmlns:lv="nativescript-telerik-ui-pro/listview" 
+     loaded="pageLoaded"
+>
+  <DockLayout>
+    <TabView selectedIndexChanged="{{tabChanged}}">
+      <TabView.items>
+
+       <TabViewItem title="Home">
+         <TabViewItem.view>
+            <StackLayout>
+             <Label text="Welcome"/>
+          </StackLayout>
+          </TabViewItem.view>
+       </TabViewItem>
+
+       <TabViewItem title="List1">
+         <TabViewItem.view>
+          <DockLayout>
+         <Button dock="top" text="Show Page" tap="{{formTap}}" />
+          <lv:RadListView items="{{rows1}}">
+             <lv:RadListView.itemTemplate>
+                <StackLayout>
+                    <Label text="{{description}}"/>
+               </StackLayout>
+             </lv:RadListView.itemTemplate>
+           </lv:RadListView>
+         </DockLayout>
+        </TabViewItem.view>
+       </TabViewItem>
+
+       <TabViewItem title="List2">
+         <TabViewItem.view>
+          <DockLayout>
+           <lv:RadListView items="{{rows2}}" >
+             <lv:RadListView.itemTemplate>
+                <StackLayout>
+                    <Label text="{{description}}"/>
+               </StackLayout>
+             </lv:RadListView.itemTemplate>
+           </lv:RadListView>
+         </DockLayout>
+        </TabViewItem.view>
+       </TabViewItem>
+
+     </TabView.items>
+   </TabView>
+
+</DockLayout>
+
+</Page>
+
+
+
+
